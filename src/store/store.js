@@ -10,7 +10,7 @@ export const store = new Vuex.Store({
         token: ''
     },
     mutations: {
-        change(state, flavor) {
+        change(state, token) {
             state.token = token
         }
     },
