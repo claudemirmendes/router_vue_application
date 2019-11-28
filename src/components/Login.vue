@@ -1,20 +1,24 @@
 <template>
+<html lang="en">
+  <head>
+   <meta name="Clinica Dra caroline Lotife" content="sistema de controle de agenda">
+  </head>
 <body>
-<form  method="post">
   <div class="imgcontainer">
-    <img src="../assets/images.jpeg" class="avatar">
+    <img src="../assets/images.jpeg"  alt="logo" class="avatar">
   </div>
 
   <div class="container">
     <label for="email"><b>Email</b></label>
-    <input type="text" placeholder="Entre com seu email" name="email" required>
+    <input type="text" v-model="user.email" placeholder="Entre com seu email" name="email" id="email" required>
     <label for="password"><b>Senha</b></label>
-    <input type="password" placeholder="Entre com sua senha" name="password" required>
-    <button type="submit">Login</button>
+    <input type="password" v-model="user.password" placeholder="Entre com sua senha"  id="password" name="password" required>
+    <button @click="tryLogin()" type="submit">Login</button>
+    {{$store.getters.token}}
   </div>
-</form>
 
 </body>
+</html>
 </template>
 
 <style scoped>
@@ -40,7 +44,7 @@ h2 {
 /* Set a style for all buttons */
 button {
   background-color: #4CAF50;
-  color: white;
+  color: black;
   padding: 14px 20px;
   margin: 8px 0;
   border: none;
@@ -96,11 +100,41 @@ span.psw {
 </style>
 
 <script>
+import axios from 'axios';
+import Swal from 'sweetalert2'
+
 export default {
     data () {
          return {
-             message: 'Aqui é um componente de login',
+           user:{
+             email: '',
+             password: '',
+           }
          }
     },
+    methods: {
+      async tryLogin(){
+        const user = this.user
+        axios.post('http://localhost:3001/public/users/login',{
+           email: user.email,
+           password: user.password
+        })
+          .then( (response) => {
+           if (response.data.message) {
+             Swal.fire({
+               title: 'Ops :(',
+               text: response.data.message,
+               icon: 'error',
+               confirmButtonText: 'Fechar'
+             })
+           } else {
+             this.$store.commit('change',response.data)
+           }
+        })
+        .catch(function (error) {
+           alert(error);
+        });
+      },
+    }
 }
 </script>

@@ -6,6 +6,7 @@ import router from './router';
 import { store} from './store/store'
 
 Vue.config.productionTip = false;
+import axios from 'axios';
 
 /* eslint-disable no-new */
 new Vue({
