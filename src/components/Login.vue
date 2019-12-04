@@ -122,13 +122,14 @@ export default {
           .then( (response) => {
            if (response.data.message) {
              Swal.fire({
-               title: 'Ops :(',
+               title: 'Ops',
                text: response.data.message,
                icon: 'error',
                confirmButtonText: 'Fechar'
              })
            } else {
              this.$store.commit('change',response.data)
+             this.$router.push('home')
            }
         })
         .catch(function (error) {
