@@ -2,13 +2,12 @@ import Vue from 'vue'
 import Vuex from 'vuex'
 import createPersistedState from "vuex-persistedstate";
 
-
-
 Vue.use(Vuex)
 
 export const store = new Vuex.Store({
     state : {
-        token: ''
+        token: '',
+        url: 'http://192.168.43.166:3001/'
     },
     plugins: [createPersistedState()],
     mutations: {
@@ -17,6 +16,7 @@ export const store = new Vuex.Store({
         }
     },
     getters : {
-        token: state => state.token
+        token: state => state.token,
+        url : state => state.url
     }
 })

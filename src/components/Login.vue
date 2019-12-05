@@ -7,16 +7,17 @@
   <div class="imgcontainer">
     <img src="../assets/images.jpeg"  alt="logo" class="avatar">
   </div>
-
   <div class="container">
-    <label for="email"><b>Email</b></label>
-    <input type="text" v-model="user.email" placeholder="Entre com seu email" name="email" id="email" required>
-    <label for="password"><b>Senha</b></label>
-    <input type="password" v-model="user.password" placeholder="Entre com sua senha"  id="password" name="password" required>
+    <div>
+      <label for="email"><b>Email</b></label>
+      <input type="text" v-model="user.email" placeholder="Entre com seu email" name="email" id="email" required>
+    </div>
+    <div>
+      <label for="password"><b>Senha</b></label>
+      <input type="password" v-model="user.password" placeholder="Entre com sua senha"  id="password" name="password" required>
+    </div>
     <button @click="tryLogin()" type="submit">Login</button>
-    {{$store.getters.token}}
   </div>
-
 </body>
 </html>
 </template>
@@ -115,17 +116,13 @@ export default {
     methods: {
       async tryLogin(){
         const user = this.user
-        axios.post('http://localhost:3001/public/users/login',{
+        axios.post(`${this.$store.getters.url}public/users/login`,{
            email: user.email,
            password: user.password
         })
           .then( (response) => {
            if (response.data.message) {
-             Swal.fire({
-               title: 'Ops',
-               text: response.data.message,
-               icon: 'error',
-               confirmButtonText: 'Fechar'
+             Swal.fire({title: 'Ops', text: response.data.message,icon: 'error', confirmButtonText: 'Fechar'
              })
            } else {
              this.$store.commit('change',response.data)
@@ -133,7 +130,7 @@ export default {
            }
         })
         .catch(function (error) {
-           alert(error);
+           Swal.fire({title: 'Ops', text: error,icon: 'error', confirmButtonText: 'Fechar'})
         });
       },
     }
