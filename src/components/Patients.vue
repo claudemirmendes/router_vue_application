@@ -41,7 +41,7 @@ export default {
   methods: {
       CreatePatient() {
         const patient = this.patient
-        axios({ method: 'post', url: `${this.$store.getters.url}private/patients/create`, 
+        axios({ method: 'post', url: `https://dermato-agenda.herokuapp.com/private/patients/create`, 
          params:{email: patient.email, nome: patient.name},
          headers: {  Authorization: this.$store.getters.token } })
           .then((response) => {

@@ -7,7 +7,7 @@ Vue.use(Vuex)
 export const store = new Vuex.Store({
     state : {
         token: '',
-        url: 'http://192.168.43.166:3001/'
+        url: 'https://dermato-agenda.herokuapp.com/'
     },
     plugins: [createPersistedState()],
     mutations: {

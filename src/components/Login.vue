@@ -116,7 +116,7 @@ export default {
     methods: {
       async tryLogin(){
         const user = this.user
-        axios.post(`${this.$store.getters.url}public/users/login`,{
+        axios.post(`https://dermato-agenda.herokuapp.com/public/users/login`,{
            email: user.email,
            password: user.password
         })
