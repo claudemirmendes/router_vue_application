@@ -1,8 +1,8 @@
 <template>
 <div class="sidenav">
-  <a @click="logout()" ><md-icon class="md-size-2x">exit_to_app</md-icon></a> <br>
-  <router-link to="agenda"><md-icon class="md-size-2x">today</md-icon></router-link>
-  <router-link to="pacientes" ><md-icon class="md-size-2x">face</md-icon></router-link>
+  <a @click="logout()" ><md-icon class="md-size-1x">exit_to_app</md-icon></a> <br>
+  <router-link to="agenda"><md-icon class="md-size-1x">today</md-icon></router-link>
+  <router-link to="pacientes" ><md-icon class="md-size-1x">face</md-icon></router-link>
 </div>
 </template>
 
@@ -34,7 +34,7 @@ export default {
 /* The sidebar menu */
 .sidenav {
   height: 100%; /* Full-height: remove this if you want "auto" height */
-  width: 17%; /* Set the width of the sidebar */
+  width: 13%; /* Set the width of the sidebar */
   position: fixed; /* Fixed Sidebar (stay in place on scroll) */
   z-index: 1; /* Stay on top */
   top: 0; /* Stay at the top */
