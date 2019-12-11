@@ -1,6 +1,13 @@
 # Router vue application
 
 > SPA application using vue.
+## Dependences
+
+``` bash
+git clone 
+node 10.15.3
+vue-cli 4.0.5
+```
 ## Build Setup
 
 ``` bash
@@ -9,6 +16,9 @@ npm install
 
 # serve with hot reload at localhost:8080
 npm run dev
+
+# serve with node server localhost:?
+npm run start
 
 # build for production with minification
 npm run build
