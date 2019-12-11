@@ -1,7 +1,6 @@
-# lotife-agenda
+# router_vue_application
 
-> project for control schedule of caroline lotife and doralice moura
-
+> SPA application using vue.
 ## Build Setup
 
 ``` bash
