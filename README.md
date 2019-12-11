@@ -1,4 +1,4 @@
-# router_vue_application
+# Router vue application
 
 > SPA application using vue.
 ## Build Setup
