@@ -4,7 +4,7 @@
 ## Dependences
 
 ``` bash
-condigure https://github.com/claudemirmendes/api-router-vue-application.git
+configure the [![API]](https://github.com/claudemirmendes/api-router-vue-application.git)]
 node 10.15.3
 vue-cli 4.0.5
 ```
