@@ -4,7 +4,7 @@
 ## Dependences
 
 ``` bash
-git clone 
+git clone api
 node 10.15.3
 vue-cli 4.0.5
 ```
