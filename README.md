@@ -1,8 +1,9 @@
 # Router vue application
+> SPA application using vue.
 
 First configure the [API](https://github.com/claudemirmendes/api-router-vue-application.git)
 
-> SPA application using vue.
+
 ## Dependences
 
 ``` bash
